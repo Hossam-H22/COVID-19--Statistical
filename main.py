@@ -182,12 +182,14 @@ r = correlation(sick, helth)
 Label(frm, text="r = "+str(r)+correlation_rate(r)).place(x=20, y=75+h1+h2+t+100)
 Label(frm, text="Y = "+str(b0(sick, helth, r))+" + "+str(b1(sick, sick, r))+" X").place(x=20, y=75+h1+h2+t+125)
 
+table = 170
+row = 180
+for i in range(len(country)):
+    Label(frm, text=country[i]).place(x=20+(row*0), y=75+h1+h2+t+table+(i*20))
+    Label(frm, text=str(sick[i])).place(x=20+(row*1), y=75+h1+h2+t+table+(i*20))
+    Label(frm, text=str(died[i])).place(x=20+(row*2), y=75+h1+h2+t+table+(i*20))
+    Label(frm, text=str(helth[i])).place(x=20+(row*3), y=75+h1+h2+t+table+(i*20))
 
-for i in range(len(c)):
-    Label(frm, text=country[i]).place(x=20, y=75 + h1 + h2 + t + 200+(i*20))
-    Label(frm, text=str(sick[i])).place(x=100, y=75+h1+h2+t+200+(i*20))
-    Label(frm, text=str(died[i])).place(x=180, y=75 + h1 + h2 + t + 200 + (i * 20))
-    Label(frm, text=str(helth[i])).place(x=260, y=75 + h1 + h2 + t + 200 + (i * 20))
 
 
 Button(frm, text="Quit", command=frm.destroy, fg="#b30000").place(x=x_dimensional-50, y=y_dimensional-40)
