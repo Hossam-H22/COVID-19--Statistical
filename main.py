@@ -66,6 +66,23 @@ def IQR(items):
     q3, q1 = np.percentile(sortList, [75, 25])
     return (q3-q1)
 
+def out_leyer(items, x):
+    sortList = sorted(items)
+    q3, q1 = np.percentile(sortList, [75, 25])
+    val1 = q3 + (1.5*(q3-q1))
+    val2 = q1 - (1.5*(q3-q1))
+    if x>val1 or x<val2 : return "yes"
+    else : return "no"
+
+def show_outliers(items, d):
+    z = 0
+    for i in range(0, len(items)):
+        if (out_leyer(items, items[i]) == "yes"):
+            if (z == 0):
+                Label(frm, text="Outliers = ").place(x=520, y=d)
+            z += 1
+            Label(frm, text=str(items[i]) + ", ").place(x=530 + (z * 45), y=d)
+
 def z_score(x, x_bar, s):
     return ((x-x_bar)/s)
 
@@ -179,6 +196,7 @@ Button(frm, text="Plot-graph", command=plot_Injuries, width=10, fg=fg_button).pl
 Button(frm, text="Bar-Graph", command=bar_Injuries, width=10, fg=fg_button).place(x=140, y=210)
 Button(frm, text="Pie-Chart", command=pie_Injuries, width=10, fg=fg_button).place(x=260, y=210)
 Button(frm, text="Boxplot", command=box_Injuries, width=10, fg=fg_button).place(x=380, y=210)
+show_outliers(sick, 210)
 Label(frm, text="------------------------------------------------------------------------------------------------------"
                 "-----------------------------------------------------------------").place(x=10, y=245)
 
@@ -194,6 +212,7 @@ Button(frm, text="Plot-graph", command=plot_deaths, width=10, fg=fg_button).plac
 Button(frm, text="Bar-Graph", command=bar_deaths, width=10, fg=fg_button).place(x=140, y=375)
 Button(frm, text="Pie-Chart", command=pie_deaths, width=10, fg=fg_button).place(x=260, y=375)
 Button(frm, text="Boxplot", command=box_deaths, width=10, fg=fg_button).place(x=380, y=375)
+show_outliers(died, 375)
 Label(frm, text="------------------------------------------------------------------------------------------------------"
                 "-----------------------------------------------------------------").place(x=10, y=410)
 
@@ -209,6 +228,7 @@ Button(frm, text="Plot-graph", command=plot_Recovered, width=10, fg=fg_button).p
 Button(frm, text="Bar-Graph", command=bar_Recovered, width=10, fg=fg_button).place(x=140, y=540)
 Button(frm, text="Pie-Chart", command=pie_Recovered, width=10, fg=fg_button).place(x=260, y=540)
 Button(frm, text="Boxplot", command=box_Recovered, width=10, fg=fg_button).place(x=380, y=540)
+show_outliers(helth, 540)
 Label(frm, text="------------------------------------------------------------------------------------------------------"
                 "-----------------------------------------------------------------").place(x=10, y=575)
 
