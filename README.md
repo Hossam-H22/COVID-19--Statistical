@@ -7,7 +7,7 @@ The novel coronavirus (COVID-19), which was originally detected at the end of 20
 From our studies and from the graphs which represent the injuries, death and recovered in each sample country, we were able to calculate some of descriptive statistics like mean, mode, IQR, .... and so on
 <br>
 <details>
-  <summary>:zap: Dimo Video</summary>
+  <summary>:zap: Demo Video</summary>
   https://youtu.be/9NH0SvmiDtw
 </details>
 <br><br>
