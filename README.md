@@ -6,12 +6,13 @@ The novel coronavirus (COVID-19), which was originally detected at the end of 20
 <br>
 From our studies and from the graphs which represent the injuries, death and recovered in each sample country, we were able to calculate some of descriptive statistics like mean, mode, IQR, .... and so on
 <br>
-<details>
+<!-- <details>
   <summary>:zap: Demo Video</summary>
   https://youtu.be/9NH0SvmiDtw
 </details>
-<br><br>
+<br> -->
 
+<br>
 
 ### Project Interface :- 🎟️
 ![1](https://user-images.githubusercontent.com/88390970/147803170-48c71016-a5e1-458c-ad28-1167e4f7d7e8.jpg)
